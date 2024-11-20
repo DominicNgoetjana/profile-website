@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-dark via-dark/95 to-dark/90 text-white m-0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+  
+  .nav-link {
+    @apply relative flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent 
+           transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-icon {
+    @apply w-5 h-5 transition-transform duration-300;
+  }
+  
+  .btn-primary {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-accent 
+           text-white px-8 py-3 rounded-lg transition-all duration-300
+           hover:scale-105 hover:shadow-lg hover:shadow-primary/20
+           before:absolute before:inset-0 before:bg-white/20 before:translate-x-[-100%] 
+           before:transition-transform before:duration-300 hover:before:translate-x-0;
+  }
+  
+  .btn-secondary {
+    @apply relative overflow-hidden bg-gradient-to-r from-accent via-secondary to-primary
+           text-white px-8 py-3 rounded-lg transition-all duration-300
+           hover:scale-105 hover:shadow-lg hover:shadow-accent/20
+           before:absolute before:inset-0 before:bg-white/20 before:translate-x-[-100%] 
+           before:transition-transform before:duration-300 hover:before:translate-x-0;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .nav-menu-item {
+    @apply relative flex flex-col items-center justify-center px-4;
+  }
+
+  .nav-menu-icon {
+    @apply w-8 h-8 transition-all duration-300;
+  }
+
+  .nav-menu-text {
+    @apply absolute top-full mt-1 opacity-0 transform translate-y-2 transition-all duration-300;
+  }
+
+  .floating-gradient {
+    @apply absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20
+           blur-3xl opacity-50 animate-pulse;
+  }
+}
