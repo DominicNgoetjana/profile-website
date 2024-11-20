@@ -12,19 +12,29 @@ export default function Hero({ onExploreClick }) {
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, type: "spring", bounce: 0.4 }}
-              className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white/20 shadow-xl"
-            >
-              {/* Replace the src with your profile picture */}
-              <img 
-                src="https://via.placeholder.com/400" 
-                alt="Profile"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-              />
-            </motion.div>
+            {/* Profile picture container with margin space for expansion */}
+            <div className="relative h-[300px] md:h-[340px] mb-4 flex justify-center items-start">
+              {/* Profile picture with initial animation */}
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, type: "spring", bounce: 0.4 }}
+                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-accent"
+                whileHover={{
+                  scale: 1.5,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Image container */}
+                <div className="w-full h-full rounded-full overflow-hidden bg-dark">
+                  <img 
+                    src="https://via.placeholder.com/800" 
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
 
             <motion.h1 
               className="text-4xl md:text-6xl font-bold mb-6"

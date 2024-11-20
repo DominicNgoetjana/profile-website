@@ -35,8 +35,8 @@ function App() {
   return (
     <Layout>
       {/* Navigation */}
-      <nav className="fixed w-full bg-dark/80 backdrop-blur-md z-50 py-4">
-        <div className="section-padding flex justify-between items-center">
+      <nav className="fixed w-full bg-dark/80 backdrop-blur-md z-50 h-14">
+        <div className="section-padding h-full flex justify-between items-center">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
