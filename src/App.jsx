@@ -9,6 +9,12 @@ import {
   EnvelopeIcon
 } from '@heroicons/react/24/outline';
 
+import Layout from './components/Layout';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -27,9 +33,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-dark">
-      <div className="floating-gradient" />
-      
+    <Layout>
       {/* Navigation */}
       <nav className="fixed w-full bg-dark/80 backdrop-blur-md z-50 py-4">
         <div className="section-padding flex justify-between items-center">
@@ -101,7 +105,7 @@ function App() {
                     whileHover={{ x: 10 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <item.icon className="nav-icon" />
+                    <item.icon className="nav-icon group-hover:scale-110" />
                     {item.name}
                   </motion.button>
                 ))}
@@ -111,69 +115,12 @@ function App() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="section-padding min-h-screen flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center relative"
-        >
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <span className="gradient-text">Welcome</span> to My Portfolio
-          </motion.h1>
-          <motion.p 
-            className="text-lg md:text-xl text-gray-300 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            I create beautiful and functional web experiences
-          </motion.p>
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <motion.button 
-              className="btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleScroll('Projects')}
-            >
-              View Projects
-            </motion.button>
-            <motion.button 
-              className="btn-secondary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleScroll('Contact')}
-            >
-              Contact Me
-            </motion.button>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Placeholder sections */}
-      <section id="about" className="section-padding min-h-screen">
-        <h2 className="text-3xl font-bold gradient-text mb-8">About Me</h2>
-      </section>
-
-      <section id="projects" className="section-padding min-h-screen">
-        <h2 className="text-3xl font-bold gradient-text mb-8">Projects</h2>
-      </section>
-
-      <section id="contact" className="section-padding min-h-screen">
-        <h2 className="text-3xl font-bold gradient-text mb-8">Contact</h2>
-      </section>
-    </div>
+      {/* Main Content */}
+      <Hero onExploreClick={() => handleScroll('About')} />
+      <About />
+      <Projects />
+      <Contact />
+    </Layout>
   );
 }
 
