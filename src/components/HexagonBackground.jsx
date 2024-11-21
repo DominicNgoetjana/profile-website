@@ -9,23 +9,37 @@ export default function HexagonBackground() {
     let animationFrameId;
     let hexagons = [];
 
-    // Set canvas size
+    // Set canvas size with device pixel ratio consideration
     const setCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.parentNode.getBoundingClientRect();
+      
+      // Set display size (css pixels)
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
+      
+      // Set actual size in memory (scaled for device pixel ratio)
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      
+      // Scale context to match device pixel ratio
+      ctx.scale(dpr, dpr);
+      
+      // Reset hexagons when canvas size changes
+      init(rect.width, rect.height);
     };
-    setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
 
     // Hexagon class
     class Hexagon {
-      constructor(x, y) {
+      constructor(x, y, maxWidth, maxHeight) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 15 + 10; 
+        this.maxWidth = maxWidth;
+        this.maxHeight = maxHeight;
+        this.size = Math.random() * 15 + 10;
         this.velocity = {
-          x: (Math.random() - 0.5) * 0.5, 
-          y: (Math.random() - 0.5) * 0.5  
+          x: (Math.random() - 0.5) * 0.5,
+          y: (Math.random() - 0.5) * 0.5
         };
         this.opacity = Math.random() * 0.15 + 0.1;
         this.connections = [];
@@ -55,8 +69,14 @@ export default function HexagonBackground() {
 
         // Bounce off edges with some padding
         const padding = this.size;
-        if (this.x < padding || this.x > canvas.width - padding) this.velocity.x *= -1;
-        if (this.y < padding || this.y > canvas.height - padding) this.velocity.y *= -1;
+        if (this.x < padding || this.x > this.maxWidth - padding) {
+          this.velocity.x *= -1;
+          this.x = Math.max(padding, Math.min(this.x, this.maxWidth - padding));
+        }
+        if (this.y < padding || this.y > this.maxHeight - padding) {
+          this.velocity.y *= -1;
+          this.y = Math.max(padding, Math.min(this.y, this.maxHeight - padding));
+        }
 
         this.connections = [];
       }
@@ -65,7 +85,7 @@ export default function HexagonBackground() {
         for (let hexagon of hexagons) {
           if (hexagon === this) continue;
           const distance = Math.hypot(this.x - hexagon.x, this.y - hexagon.y);
-          if (distance < 150) { 
+          if (distance < 150) {
             this.connections.push({
               point: hexagon,
               opacity: (1 - distance / 150) * 0.1
@@ -76,12 +96,12 @@ export default function HexagonBackground() {
     }
 
     // Initialize hexagons with grid-like positioning
-    const init = () => {
+    const init = (width, height) => {
       hexagons = [];
-      const spacing = 100; 
-      const rows = Math.ceil(canvas.height / spacing);
-      const cols = Math.ceil(canvas.width / spacing);
-      
+      const spacing = 100;
+      const rows = Math.ceil(height / spacing);
+      const cols = Math.ceil(width / spacing);
+
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           // Add some randomness to the grid position
@@ -89,15 +109,16 @@ export default function HexagonBackground() {
           const y = row * spacing + (Math.random() - 0.5) * spacing * 0.5;
           // Offset every other row
           const offset = row % 2 === 0 ? spacing / 2 : 0;
-          
-          hexagons.push(new Hexagon(x + offset, y));
+
+          hexagons.push(new Hexagon(x + offset, y, width, height));
         }
       }
     };
 
     // Animation loop
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const rect = canvas.parentNode.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
 
       // Update and draw hexagons
       hexagons.forEach(hexagon => {
@@ -121,11 +142,18 @@ export default function HexagonBackground() {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    init();
+    // Initial setup
+    setCanvasSize();
+    
+    // Handle resize
+    const debouncedResize = debounce(setCanvasSize, 250);
+    window.addEventListener('resize', debouncedResize);
+
+    // Start animation
     animate();
 
     return () => {
-      window.removeEventListener('resize', setCanvasSize);
+      window.removeEventListener('resize', debouncedResize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -133,8 +161,25 @@ export default function HexagonBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full"
-      style={{ opacity: 1 }}
+      className="fixed inset-0"
+      style={{ 
+        width: '100%',
+        height: '100%',
+        opacity: 1
+      }}
     />
   );
+}
+
+// Debounce helper function
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
