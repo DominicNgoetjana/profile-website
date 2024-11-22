@@ -19,11 +19,8 @@ export default function Hero({ onExploreClick }) {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, type: "spring", bounce: 0.4 }}
-                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-accent"
-                whileHover={{
-                  scale: 1.5,
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ scale: 1.5 }}
+                className="relative w-[256px] h-[256px] md:w-[320px] md:h-[320px] rounded-full p-1 bg-gradient-to-r from-primary via-secondary to-accent"
               >
                 {/* Image container */}
                 <div className="w-full h-full rounded-full overflow-hidden bg-dark">
@@ -42,7 +39,7 @@ export default function Hero({ onExploreClick }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="gradient-text">Welcome</span> to My Portfolio
+              <span className="gradient-text-primary">Welcome to My Portfolio</span>
             </motion.h1>
             
             <motion.p 

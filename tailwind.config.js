@@ -7,10 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FF0000",    // Red
-        secondary: "#FFA500",  // Orange
-        accent: "#0000FF",     // Blue
-        dark: "#000000",       // Black
+        primary: "#3B82F6",    // Modern blue
+        secondary: "#60A5FA",  // Lighter blue
+        accent: "#2563EB",     // Deeper blue
+        dark: "#0F172A",       // Deep navy
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

@@ -23,12 +23,12 @@ export default function About() {
             className="max-w-6xl mx-auto"
           >
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold mb-12"
+              className="section-heading mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="gradient-text">About</span> Me
+              <span>About</span> Me
             </motion.h2>
 
             <div className="grid md:grid-cols-2 gap-8">

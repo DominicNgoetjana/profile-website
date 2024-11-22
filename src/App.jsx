@@ -42,7 +42,7 @@ function App() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold gradient-text"
           >
-            Portfolio
+            KDN
           </motion.h1>
 
           {/* Desktop Navigation */}
