@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#3B82F6",    // Modern blue
-        secondary: "#60A5FA",  // Lighter blue
-        accent: "#2563EB",     // Deeper blue
-        dark: "#0F172A",       // Deep navy
+        primary: "#FF4D00",    // Vibrant orange
+        secondary: "#FFB800",  // Warm yellow
+        accent: "#FF0000",     // Bold red
+        dark: "#0A0A0A",       // Darker black
       },
       fontFamily: {
         outfit: ['Outfit', 'system-ui', 'sans-serif'],

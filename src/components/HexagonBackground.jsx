@@ -6,7 +6,7 @@ export default function HexagonBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    let animationFrameId;
+    let animationFrameId; 
     let hexagons = [];
 
     // Set canvas size with device pixel ratio consideration
@@ -41,7 +41,7 @@ export default function HexagonBackground() {
           x: (Math.random() - 0.5) * 0.5,
           y: (Math.random() - 0.5) * 0.5
         };
-        this.opacity = Math.random() * 0.15 + 0.1;
+        this.opacity = Math.random() * 0.2 + 0.15;
         this.connections = [];
       }
 
