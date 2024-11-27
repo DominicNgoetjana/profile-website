@@ -2,6 +2,10 @@ import { writeFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import https from 'https';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const USERNAME = 'dominicngoetjana';
