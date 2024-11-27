@@ -1,0 +1,226 @@
+{
+  "projects": [
+    {
+      "id": 216051903,
+      "name": "3D-Graphics-Renderer",
+      "description": "3D Graphics Renderer",
+      "languages": [
+        "HTML",
+        "Makefile",
+        "C",
+        "C++",
+        "JavaScript",
+        "CMake",
+        "CSS",
+        "GLSL",
+        "Python",
+        "Shell"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/3D-Graphics-Renderer",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 837520015,
+      "name": "task-management-system",
+      "description": "This project is a simple RESTful API for a Task Management System built with Spring Boot.",
+      "languages": [
+        "Java"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/task-management-system",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 822787324,
+      "name": "reactjs-pagey",
+      "description": null,
+      "languages": [
+        "TypeScript",
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/reactjs-pagey",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 744188962,
+      "name": "telegram-nc-admin",
+      "description": null,
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "homepage": "https://dominicngoetjana.github.io/telegram-nc-admin/",
+      "github_url": "https://github.com/DominicNgoetjana/telegram-nc-admin",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 686391963,
+      "name": "sfg-di",
+      "description": "Dependency Injection Examples",
+      "languages": [
+        "Java"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/sfg-di",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 667387848,
+      "name": "Portfolio",
+      "description": "Build a Stunning portfolio with React JS and framer-motion. This portfolio is created using framer-motion for cool transitions and animation. If you want to learn how to create this portfolio then you can follow below tutorial link in the ReadMe",
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "homepage": "https://react-portfolio-sigma.vercel.app/",
+      "github_url": "https://github.com/DominicNgoetjana/Portfolio",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 665972700,
+      "name": "spring5webapp",
+      "description": "Example Spring 5 Web Application",
+      "languages": [
+        "Java"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/spring5webapp",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 216060132,
+      "name": "2D-Top-Down-Shooter",
+      "description": null,
+      "languages": [
+        "C#",
+        "ASP",
+        "CSS",
+        "Objective-C",
+        "ShaderLab",
+        "Smalltalk"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/2D-Top-Down-Shooter",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 200542916,
+      "name": "ProfileAPI",
+      "description": null,
+      "languages": [
+        "JavaScript",
+        "C#",
+        "HTML",
+        "CSS",
+        "ASP"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/ProfileAPI",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 103589532,
+      "name": "Word-Spawner",
+      "description": "CSC2002S - Concurrent Programming",
+      "languages": [
+        "Java"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/Word-Spawner",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 102332305,
+      "name": "Parallel-Programming-Exercise",
+      "description": "Parallel Programming Exercise",
+      "languages": [
+        "Java",
+        "Makefile",
+        "Shell"
+      ],
+      "homepage": "",
+      "github_url": "https://github.com/DominicNgoetjana/Parallel-Programming-Exercise",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 200542049,
+      "name": "ProfileApp",
+      "description": "Basic User profiile API  created in Angular, connecteed to SQLServer database",
+      "languages": [
+        "TypeScript",
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/ProfileApp",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 166218407,
+      "name": "firstangularapp",
+      "description": "Basic app consisting of fundamental principles in Angular 2+",
+      "languages": [
+        "HTML"
+      ],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/firstangularapp",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 146124852,
+      "name": "ASD-Notes",
+      "description": "My notes on Advanced-Software-Development ",
+      "languages": [],
+      "homepage": "https://www.angusmackenzie.co.za/ASD-Notes/",
+      "github_url": "https://github.com/DominicNgoetjana/ASD-Notes",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    },
+    {
+      "id": 56840178,
+      "name": "hello-worlld",
+      "description": "Guide repository",
+      "languages": [],
+      "homepage": null,
+      "github_url": "https://github.com/DominicNgoetjana/hello-worlld",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0
+    }
+  ],
+  "lastUpdated": "2024-11-27"
+}

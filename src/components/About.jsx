@@ -23,7 +23,7 @@ export default function About() {
             className="max-w-6xl mx-auto"
           >
             <motion.h2 
-              className="section-heading mb-12"
+              className="section-heading mb-12 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
